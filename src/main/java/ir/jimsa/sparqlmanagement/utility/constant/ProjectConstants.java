@@ -10,6 +10,7 @@ public class ProjectConstants {
     public static final int PUBLIC_ID_MAX_LENGTH = 512;
     public static final int PUBLIC_ID_DEFAULT_LENGTH = 64;
     public static final String PUBLIC_ID_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+    public static final String PUBLIC_ID_PATTERN = "^[A-Za-z0-9-_]+$";
 
     // ======================== Exception ======================== //
     public static final String EXCEPTION_PUBLIC_ID_MESSAGE = "SPARQL Public ID is invalid!";
