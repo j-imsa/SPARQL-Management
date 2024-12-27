@@ -108,8 +108,10 @@ In this application, we aim to manage queries in rest-api-mode.
 - Swagger:
   - http://localhost:8085/sparql-management/docs-ui
   - http://localhost:8085/sparql-management/api-docs
+  - ![Screenshot from 2024-12-27 15-41-03.png](Screenshot%20from%202024-12-27%2015-41-03.png)
 - DB:
   - http://localhost:8085/sparql-management/h2-console
+  - ![Screenshot from 2024-12-27 15-40-22.png](Screenshot%20from%202024-12-27%2015-40-22.png)
 
 
 
