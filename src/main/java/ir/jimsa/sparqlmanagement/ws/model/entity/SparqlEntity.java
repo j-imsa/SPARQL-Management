@@ -10,14 +10,14 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "sparqls")
-public class SparqlEntity {
+public class SparqlEntity extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "public_id",nullable = false, unique = true)
+    @Column(name = "public_id", nullable = false, unique = true)
     private String publicId;
 
     private String name;
