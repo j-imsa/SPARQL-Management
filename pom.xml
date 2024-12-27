@@ -10,7 +10,7 @@
     </parent>
     <groupId>ir.jimsa</groupId>
     <artifactId>SPARQL-Management</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>SPARQL Management</name>
     <description>SPARQL Management</description>
     <url/>
@@ -18,7 +18,11 @@
         <license/>
     </licenses>
     <developers>
-        <developer/>
+        <developer>
+            <name>Iman Salehi</name>
+            <email>cse.isalehi@gmail.com</email>
+            <id>jimsa</id>
+        </developer>
     </developers>
     <scm>
         <connection/>
@@ -38,7 +42,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -60,6 +63,20 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
