@@ -1,13 +1,21 @@
 package ir.jimsa.sparqlmanagement.unit.service;
 
+import ir.jimsa.sparqlmanagement.utility.mapper.SparqlMapper;
+import ir.jimsa.sparqlmanagement.ws.model.dto.SparqlDto;
 import ir.jimsa.sparqlmanagement.ws.repository.SparqlRepository;
 import ir.jimsa.sparqlmanagement.ws.service.impl.SparqlServiceImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 public class SparqlServiceTests {
@@ -18,22 +26,40 @@ public class SparqlServiceTests {
     @Mock
     private SparqlRepository sparqlRepository;
 
+    @Mock
+    private SparqlMapper sparqlMapper;
+
     @Nested
     @DisplayName("CreateSparql")
     class CreateSparqlTests {
 
+        @Test
+        @DisplayName("with invalid public_id, should throw AppServiceException")
+        void testCreateSparqlWithInvalidPublicId() {
+            SparqlDto sparqlDto = new SparqlDto();
+            sparqlDto.setPublicId(null);
+
+            assertThatThrownBy(() -> sparqlService.create(sparqlDto))
+                    .isInstanceOf(NullPointerException.class)
+                    .hasMessageContaining("null");
+            verify(sparqlRepository, times(0)).findAll();
+            verify(sparqlMapper, times(0)).mapToEntity(any(SparqlDto.class));
+        }
 
     }
 
     @Nested
     @DisplayName("ReadSparql")
-    class ReadSparqlTests {}
+    class ReadSparqlTests {
+    }
 
     @Nested
     @DisplayName("UpdateSparql")
-    class UpdateSparqlTests {}
+    class UpdateSparqlTests {
+    }
 
     @Nested
     @DisplayName("DeleteSparql")
-    class DeleteSparqlTests {}
+    class DeleteSparqlTests {
+    }
 }
