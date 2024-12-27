@@ -21,6 +21,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequests -> {
                     authorizeRequests.requestMatchers(HttpMethod.GET, "/sparql/**").permitAll();
                     authorizeRequests.requestMatchers("/h2-console/**").permitAll();
+                    authorizeRequests.requestMatchers("/docs-ui/**").permitAll();
+                    authorizeRequests.requestMatchers("/api-docs/**").permitAll();
+                    authorizeRequests.requestMatchers("/swagger-ui/**").permitAll();
                     authorizeRequests.requestMatchers("/sparql/**").authenticated();
                 })
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
