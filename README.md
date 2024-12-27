@@ -49,6 +49,10 @@ In this application, we aim to manage queries in rest-api-mode.
 ## Request / Response
 
 > you can find the Postman exported collections and environment to import them!
+> 
+> [SPARQL Management.postman_collection.json](SPARQL%20Management.postman_collection.json)
+> 
+> [SPARQL Management Env.postman_environment.json](SPARQL%20Management%20Env.postman_environment.json)
 
 
 1. Get All

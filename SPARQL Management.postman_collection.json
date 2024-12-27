@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "9fe19b43-0c52-42cc-b137-b6dbc99332e2",
+		"name": "SPARQL Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3443036"
+	},
+	"item": [
+		{
+			"name": "Read All SPARQL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/sparql",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"sparql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read SPARQL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/sparql/wzBJ1Dq9Qd8lTXhJrgImxl4XoB9rQkCzsZizS6ztdsmyncmJH7pz4DC7PDZ_KFhG",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"sparql",
+						"wzBJ1Dq9Qd8lTXhJrgImxl4XoB9rQkCzsZizS6ztdsmyncmJH7pz4DC7PDZ_KFhG"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creat SPARQL",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "ihavethepower",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"jimsa\",\n    \"description\": \"test description\",\n    \"query\": \"select Iman drom candidiates :)\",\n    \"creator\": \"Iman\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/sparql",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"sparql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update SPARQL",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "ihavenosecrets",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "alirezaemad",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Amin\",\n    \"description\": \"test description\",\n    \"query\": \"select Iman from candidiates :)\",\n    \"creator\": \"Alireza\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/sparql/YWXuspA5kfpB8i5Wb74dy8G-82hyGfhwqBaXSH9NQ-PotukSGIr2F41hkWaz-eYY",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"sparql",
+						"YWXuspA5kfpB8i5Wb74dy8G-82hyGfhwqBaXSH9NQ-PotukSGIr2F41hkWaz-eYY"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete SPARQL",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "worldwideweb",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "timbernerslee",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/sparql/YWXuspA5kfpB8i5Wb74dy8G-82hyGfhwqBaXSH9NQ-PotukSGIr2F41hkWaz-eYY",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"sparql",
+						"YWXuspA5kfpB8i5Wb74dy8G-82hyGfhwqBaXSH9NQ-PotukSGIr2F41hkWaz-eYY"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
