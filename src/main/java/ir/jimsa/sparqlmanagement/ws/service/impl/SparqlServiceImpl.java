@@ -40,7 +40,8 @@ public class SparqlServiceImpl implements SparqlService {
 
     @Override
     public List<SparqlDto> read(int page, int size) {
-        Pageable pageable = PageRequest.of(page - 1, size, Sort.Direction.ASC);
+        Pageable pageable = PageRequest.of(page - 1, size,
+                Sort.by(Sort.Direction.ASC, "name"));
         Page<SparqlEntity> sparqlEntityPage = repository.findAll(pageable);
         return sparqlEntityPage
                 .get()
