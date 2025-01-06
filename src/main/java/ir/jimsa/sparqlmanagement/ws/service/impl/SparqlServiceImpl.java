@@ -30,7 +30,7 @@ public class SparqlServiceImpl implements SparqlService {
 
     @Override
     public SparqlDto create(SparqlDto sparqlDto) {
-        if (sparqlDto.getPublicId() != null || !sparqlDto.getPublicId().isEmpty()) {
+        if (sparqlDto.getPublicId() != null) {
             throw new AppServiceException(EXCEPTION_PUBLIC_ID_MESSAGE, HttpStatus.BAD_REQUEST);
         }
         SparqlEntity entity = mapper.mapToEntity(sparqlDto);

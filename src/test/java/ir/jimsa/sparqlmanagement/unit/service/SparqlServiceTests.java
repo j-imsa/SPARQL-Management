@@ -1,5 +1,6 @@
 package ir.jimsa.sparqlmanagement.unit.service;
 
+import ir.jimsa.sparqlmanagement.config.exception.AppServiceException;
 import ir.jimsa.sparqlmanagement.utility.mapper.SparqlMapper;
 import ir.jimsa.sparqlmanagement.ws.model.dto.SparqlDto;
 import ir.jimsa.sparqlmanagement.ws.repository.SparqlRepository;
@@ -12,6 +13,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import static ir.jimsa.sparqlmanagement.utility.constant.ProjectConstants.EXCEPTION_PUBLIC_ID_MESSAGE;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
@@ -37,11 +39,11 @@ public class SparqlServiceTests {
         @DisplayName("with invalid public_id, should throw AppServiceException")
         void testCreateSparqlWithInvalidPublicId() {
             SparqlDto sparqlDto = new SparqlDto();
-            sparqlDto.setPublicId(null);
+            sparqlDto.setPublicId("null"); // Setting publicId is an invalid action!
 
             assertThatThrownBy(() -> sparqlService.create(sparqlDto))
-                    .isInstanceOf(NullPointerException.class)
-                    .hasMessageContaining("null");
+                    .isInstanceOf(AppServiceException.class)
+                    .hasMessageContaining(EXCEPTION_PUBLIC_ID_MESSAGE);
             verify(sparqlRepository, times(0)).findAll();
             verify(sparqlMapper, times(0)).mapToEntity(any(SparqlDto.class));
         }
