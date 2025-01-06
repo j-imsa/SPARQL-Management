@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface SparqlRepository extends JpaRepository<SparqlEntity, String> {
+public interface SparqlRepository extends JpaRepository<SparqlEntity, Long> {
     Optional<SparqlEntity> findByPublicId(String publicId);
 }
